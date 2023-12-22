@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&family=Saira+Condensed:wght@300;400;500;600;700;800&display=swap");
+body {
+  background-color: #f7ecde;
+  font-family: "PT Sans Caption", sans-serif;
+}
+
+::selection {
+  background-color: #fec260;
+  color: #352e28;
+}
+.main-title h1::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 15px;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: #fec260;
+  z-index: -1;
+  transition: all 0.35s;
+}
+.main-title h1 {
+  font-size: 50px;
+  font-family: "Pacifico", cursive;
+  color: #352e28;
+  display: inline-block;
+}
+.main-title h1:hover::before {
+  height: 30px;
+}
+.book-form {
+  border-width: 2px 0 2px 0;
+  border-style: dotted;
+  border-color: #352e28;
+}
+.book-form h2 {
+  font-family: "Righteous", cursive;
+  font-size: 25px;
+  background-image: linear-gradient(to right, #3ca55c, #938c3e);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 20px 0;
+}
+.btn-visit {
+  background-color: #9eb23b;
+}
+.btn-visit:hover {
+  background-color: #8a9e23;
+}
+.not-valid {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 25px;
+}
+.not-valid p {
+  font-family: "Bree Serif", serif;
+  font-size: 21px;
+  line-height: 1.3;
+  color: #352e28;
+}
+
+.not-valid div span {
+  width: 20px;
+  height: 20px;
+  margin-right: 7px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.not-valid .colors-span span:nth-child(1) {
+  background-color: #f15f5d;
+}
+.not-valid .colors-span span:nth-child(2) {
+  background-color: #febe2e;
+}
+.not-valid .colors-span span:nth-child(3) {
+  background-color: #4db748;
+}
+.fa-xmark {
+  cursor: pointer;
+}

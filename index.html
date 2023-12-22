@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmarker</title>
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/crud.css" />
+  </head>
+  <body>
+
+
+
+  <!--==============> The Form Secion <================-->
+
+    <section id="book">
+      <div class="container">
+        <div class="main-title text-center fw-bolder py-5 mb-3">
+          <h1 class="position-relative">Bookmarker</h1>
+        </div>
+        <div class="book-form">
+          <h2 class="text-center">
+            <span><i class="fa-solid fa-bookmark pe-2"></i></span>Bookmark your
+            favorite sites<span><i class="fa-solid fa-bookmark ps-2"></i></span>
+          </h2>
+          <div class="mb-3 px-3">
+            <span><i class="fa-solid fa-book-bookmark pe-2"></i></span
+            ><label for="bookNameInput" class="form-label fw-bolder"
+              >Site Name</label
+            >
+            <input
+              type="text"
+              name="name"
+              oninput="validationBookName()"
+              id="bookNameInput"
+              class="form-control"
+              placeholder="Bookmark Name"
+              aria-describedby="helpId"
+            />
+            <p id="messageName" class="py-1 alert alert-danger d-none">
+              Enter Valid Name
+            </p>
+          </div>
+          <div class="mb-3 px-3">
+            <span><i class="fa-solid fa-link pe-2"></i></span
+            ><label for="bookUrlInput" class="form-label fw-bolder"
+              >Site Url</label
+            >
+            <input
+              type="text"
+              name="url"
+              oninput="validationBookUrl()"
+              id="bookUrlInput"
+              class="form-control"
+              placeholder="Website Url"
+              aria-describedby="helpId"
+            />
+            <p id="messageUrl" class="py-1 alert alert-danger d-none">
+              Enter Valid Url
+            </p>
+          </div>
+          <div class="text-center">
+            <button
+              onclick="addBook()"
+              type="submit"
+              class="btn btn-danger d-inline-block py-2 px-5 my-4"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+
+        <div class="table-responsive mt-3">
+          <table class="table text-center">
+            <thead>
+              <tr>
+                <th>Index</th>
+                <th>Website Name</th>
+                <th>Visit</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody id="tablebody">
+              <!-- Display Bookmarks here -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+      <!--==============> The Div Alert that apper to the user when enter invalid data <================-->
+
+
+    <div id="errorMessage"
+      class="error-message bg-dark bg-opacity-50 position-fixed position-relative top-0 bottom-0 w-100 z-3  d-none"
+    >
+      <div class="not-valid bg-light ">
+        <div class="d-flex justify-content-between mb-3">
+          <div class="mb-2 colors-span">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div>
+            <span ><i id="exit" class="fa-solid fa-xmark fs-3"></i></span>
+          </div>
+        </div>
+
+        <p>Site Name or Url is not valid, Please follow the rules below :</p>
+        <ol class="list-unstyled m-0 p-0">
+          <li>
+            <span
+              ><i class="fa-regular fa-circle-right p-2 text-danger"></i></span
+            >Site name mustcontain at least 3 characters
+          </li>
+          <li>
+            <span
+              ><i  class="fa-regular fa-circle-right p-2 text-danger"></i></span
+            >Site URL must be a valid one
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/crud.js"></script>
+  </body>
+</html>
